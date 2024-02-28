@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         body{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .card{
+            height: 300px;
+            width: 200px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            body{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .card{
+            height: 300px;
+            width: 200px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            margin-top: 200px;
+        }
+
+        .card:hover{
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img{
+            width: 100px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+        .card button{
+            height: 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card button:hover{
+            background-color: #0056b3;
+        }
+
+        @media screen and (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card {
+                width: calc(100% - 20px);
+            }
+        }
+    }
+
+        .card:hover{
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img{
+            width: 100px;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+
+        .card button{
+            height: 30px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        .card button:hover{
+            background-color: #0056b3;
+        }
+
+        @media screen and (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card {
+                width: calc(100% - 20px);
+            }
+        }
+        h1{
+            width: 200PX;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            margin-left: 35%;
+        
+        }
+       
+        #nav {
+            margin-top: 15PX;
+        width: 200px;
+        height: 40px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        margin-left: 15%;
+    }
+
+    #nav:hover {
+        background-color: #0056b3;
+    }
+    </style>
+</head>
+<body>
+<h1>MediMinder</h1><br>
+<button id="nav">Add Medicine</button>
+    
+
+
+
+    <script>
+          const s =[
+            {
+                "medicine": "Lopamide 2mg Tablet 10'S",
+                "image" : "https://5.imimg.com/data5/SELLER/Default/2022/6/YX/JF/UO/143546554/new-product-500x500.jpeg",
+                "price" : "Rs 18.22",
+            },
+
+
+            {
+                "medicine": "Metformin 500mg Tablets",
+                "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Metformin_500mg_Tablets.jpg/678px-Metformin_500mg_Tablets.jpg",
+                "price" : "Rs 104",
+            },
+            
+            {
+                "medicine": "naproxen 500 mg",
+                "image" : "https://cpimg.tistatic.com/08474361/b/4/500-Mg-Naproxen-Tablets.jpg",
+                "price" : "Rs 149",
+            },
+            
+            {
+                "medicine": "ampicillin-capsules",
+                "image" : "https://www.heethealthcare.com/wp-content/uploads/2020/01/ampicillin-capsules-500x500-1.jpg",
+                "price" : "Rs 180",
+            },
+            
+            {
+                "medicine": "paracetamol-tablets-500 mg",
+                "image" : "https://5.imimg.com/data5/SELLER/Default/2022/8/QM/AX/SS/129887935/paracetamol-tablets-500x500.jpeg",
+                "price" : "Rs 10",
+            },
+            
+            {
+                "medicine": "Simvastatin 40 mg Tablets",
+                "image" : "https://mcareexports.com/wp-content/uploads/2021/04/Simvastatin-40mg-Tablet-380x381.jpeg",
+                "price" : "Rs 75",
+            },
+            {
+                "medicine": "Diazepam Tablets 10 mg",
+                "image" : "https://5.imimg.com/data5/SELLER/Default/2024/1/375782997/UW/SS/UZ/201983250/valium-diazepam-tablets-10mg-500x500.jpeg",
+                "price" : "Rs 50",
+            },
+            {
+                "medicine": "Citalopram 20 mg Tablets",
+                "image" : "https://5.imimg.com/data5/SELLER/Default/2024/1/375824868/GV/LD/QT/99186229/citalopram-20-mg-tablets.jpg",
+                "price" : "Rs 30",
+            },
+            {
+                "medicine": "Losartan 50 mg Tablets",
+                "image" : "https://5.imimg.com/data5/SELLER/Default/2023/11/363194841/NG/IG/BX/198019903/losartan-cozartan-50mg-tablets-500x500.jpg",
+                "price" : "Rs 40",
+            },
+            {
+                "medicine": "Amlodipine 5 mg Tablets",
+                "image" : "https://5.imimg.com/data5/SELLER/Default/2020/9/EG/JG/CK/112301964/amodipine-tablets-ip-5-mg.jpg",
+                "discription" : "Amlodipine is used to treat high blood pressure (hypertension) or chest pain (angina).",
+                "price" : "Rs 35",
+            },
+            {
+                "medicine": "Aspirin",
+                "image" : "https://5.imimg.com/data5/ANDROID/Default/2023/6/317740921/VV/HR/AV/63898948/product-jpeg-500x500.jpg",
+                "price" : "Rs 10",
+            },
+            {
+                "medicine": "Ibuprofen",
+                "image" : "https://4.imimg.com/data4/GR/JD/MY-95289/ibu-200-2x10-500x500.jpg",
+                "price" : "Rs 15",
+            },
+            {
+                "medicine": "Acetaminophen",
+                "image" : "https://www.drugwatch.com/wp-content/uploads/Acetaminophen.jpg",
+                "price" : "Rs 12",
+            },
+            {
+                "medicine": "Ciprofloxacin",
+                "image" : "https://5.imimg.com/data5/SELLER/Default/2022/8/AV/XL/UD/154726424/ciprofloxacin-500-mg-tablets.jpg",
+                "price" : "Rs 25",
+            },
+            {
+                "medicine": "Doxycycline",
+                "image" : "https://5.imimg.com/data5/SELLER/Default/2023/1/QD/IY/UY/145670546/doxycycline-100mg-capsules-500x500.jpg",
+                "price" : "Rs 20",
+            },
+            {
+    "medicine": "Lopamide 2mg Tablet 10'S",
+    "image" : "https://5.imimg.com/data5/SELLER/Default/2022/6/YX/JF/UO/143546554/new-product-500x500.jpeg",
+    "price" : "Rs 18.22",
+}
+
+        ];
+
+
+        for(let i=0;i<s.length;i++){
+
+var a =document.createElement("div")
+a.classList.add("card");
+document.body.appendChild(a)
+
+var bb=document.getElementById("nav")
+
+var c=document.createElement("p")
+a.appendChild(c)
+c.innerText=s[i]["medicine"]
+
+var b=document.createElement("img")
+b.setAttribute("src", s[i]["image"])
+a.appendChild(b)
+
+var btn=document.createElement("p")
+a.appendChild(btn)
+btn.innerText=s[i]["price"]
+
+var btn1=document.createElement("button")
+
+btn1.innerText="Click to Add"
+
+
+btn1.addEventListener("click",function(){
+
+localStorage.setItem("medicine", s[i]["medicine"]);
+window.location.assign("./reminder.html")
+
+
+
+}
+)
+
+a.appendChild(btn1)
+
+
+
+}
+
+bb.addEventListener("click",function(){
+
+
+    window.location.assign("./reminder.html")
+})
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Reminder</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+    }
+    .medicine-event {
+        background-color: #3498db;
+        border-radius: 5px;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-bottom: 5px;
+        display: block;
+        width: 150px;
+        margin: 0 auto; /* Center the medicine events */
+    }
+
+    #medicineForm {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 50px;
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"],
+    input[type="time"],
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #3498db;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+</style>
+</head>
+<body>
+<h1>Medicine Reminder</h1>
+<div id="medicineList"></div>
+<div id="medicineForm">
+    <h3>Add Medicine</h3>
+    <label for="medicineName">Medicine Name:</label>
+    <input type="text" id="medicineName" placeholder="Enter medicine name"><br>
+    <label for="medicineTime">Time:</label>
+    <input type="time" id="medicineTime"><br>
+    <button onclick="addMedicine()">Add Medicine</button> 
+</div>
+<audio id="notificationSound" src="./Vivo Message Ringtone Download - MobCup.Com.Co.mp3"></audio>
+<script>
+
+var intervalId;
+
+function addMedicine() {
+    var medicineName = document.getElementById('medicineName').value;
+    var medicineTime = document.getElementById('medicineTime').value;
+    
+    if (!medicineName || !medicineTime) {
+        alert('Please enter medicine name and time.');
+        return;
+    }
+    
+    var medicineEvent = document.createElement('div');
+    medicineEvent.className = 'medicine-event';
+    medicineEvent.innerHTML = '<strong>' + medicineName + '</strong> at ' + medicineTime;
+    
+    document.getElementById('medicineList').appendChild(medicineEvent);
+    
+    // Clear the inputs
+    document.getElementById('medicineName').value = '';
+    document.getElementById('medicineTime').value = '';
+    
+
+    if (!intervalId) {
+        intervalId = setInterval(function() {
+            checkMedicineTime(medicineTime);
+        }, 1000); // Check every second
+    }
+}
+
+
+function checkMedicineTime(medicineTime) {
+    var currentTime = new Date();
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    
+    var [medicineHours, medicineMinutes] = medicineTime.split(':').map(Number);
+    
+    if (hours === medicineHours && minutes === medicineMinutes) {
+        // Play notification sound
+        var notificationSound = new Audio('Vivo Message Ringtone Download - MobCup.Com.Co.mp3');
+        notificationSound.play();
+        
+        // Show alert
+        // alert('Time to take your medicine!');
+        
+        // Stop interval
+        clearInterval(intervalId);
+        intervalId = null;
+    }
+}
+
+
+</script>
+</body>
+</html>
+
